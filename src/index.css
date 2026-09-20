@@ -1,0 +1,237 @@
+@import "tailwindcss";
+@import url('https://fonts.cdnfonts.com/css/lemon-milk');
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+:root {
+  --font-display: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-institution: 'Cinzel', 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-lemonmilk: 'LEMON MILK', 'Lemon Milk', 'Montserrat', 'Bricolage Grotesque', sans-serif;
+
+  /* Editorial Palette */
+  --bg-primary: #FBF9F5;
+  --bg-secondary: #F3EFE6;
+  --bg-surface: #FFFFFF;
+  --text-primary: #141413;
+  --text-secondary: #575754;
+  --text-muted: #848480;
+  --border-rule: #E5E1D8;
+  --border-subtle: #ECE8E0;
+  
+  /* Brand Accents */
+  --accent-blue: #0B4ECF;
+  --accent-terracotta: #D94824;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  letter-spacing: -0.012em;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.035em;
+  font-feature-settings: "ss01", "ss02";
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  letter-spacing: -0.02em;
+}
+
+.font-institution {
+  font-family: var(--font-institution);
+  letter-spacing: 0.03em;
+}
+
+.font-lemonmilk {
+  font-family: var(--font-lemonmilk);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Red & Blue Fire Animated Gradient */
+@keyframes red-blue-fire {
+  0% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 2px 14px rgba(255, 30, 39, 0.28)) drop-shadow(0 2px 22px rgba(11, 78, 207, 0.24));
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: drop-shadow(0 2px 18px rgba(11, 78, 207, 0.35)) drop-shadow(0 2px 26px rgba(255, 75, 43, 0.32));
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 2px 14px rgba(255, 30, 39, 0.28)) drop-shadow(0 2px 22px rgba(11, 78, 207, 0.24));
+  }
+}
+
+.fire-gradient-text {
+  background: linear-gradient(
+    120deg,
+    #FF1E27 0%,
+    #FF512F 22%,
+    #DD2476 42%,
+    #3B82F6 68%,
+    #0B4ECF 85%,
+    #FF1E27 100%
+  );
+  background-size: 240% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: red-blue-fire 6s ease-in-out infinite;
+}
+
+/* Crisp Swiss Editorial Divider Rules */
+.border-editorial {
+  border-color: var(--border-rule);
+}
+
+.border-editorial-subtle {
+  border-color: var(--border-subtle);
+}
+
+/* Precision Black Architectural Corner Accents */
+.black-corners {
+  position: relative;
+}
+
+.black-corners::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 10;
+  background: 
+    linear-gradient(to right, #000000 16px, transparent 16px) top left,
+    linear-gradient(to bottom, #000000 16px, transparent 16px) top left,
+    linear-gradient(to left, #000000 16px, transparent 16px) top right,
+    linear-gradient(to bottom, #000000 16px, transparent 16px) top right,
+    linear-gradient(to right, #000000 16px, transparent 16px) bottom left,
+    linear-gradient(to top, #000000 16px, transparent 16px) bottom left,
+    linear-gradient(to left, #000000 16px, transparent 16px) bottom right,
+    linear-gradient(to top, #000000 16px, transparent 16px) bottom right;
+  background-size: 16px 2.5px, 2.5px 16px, 16px 2.5px, 2.5px 16px, 16px 2.5px, 2.5px 16px, 16px 2.5px, 2.5px 16px;
+  background-repeat: no-repeat;
+}
+
+.black-corners-sm::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 10;
+  background: 
+    linear-gradient(to right, #000000 10px, transparent 10px) top left,
+    linear-gradient(to bottom, #000000 10px, transparent 10px) top left,
+    linear-gradient(to left, #000000 10px, transparent 10px) top right,
+    linear-gradient(to bottom, #000000 10px, transparent 10px) top right,
+    linear-gradient(to right, #000000 10px, transparent 10px) bottom left,
+    linear-gradient(to top, #000000 10px, transparent 10px) bottom left,
+    linear-gradient(to left, #000000 10px, transparent 10px) bottom right,
+    linear-gradient(to top, #000000 10px, transparent 10px) bottom right;
+  background-size: 10px 2px, 2px 10px, 10px 2px, 2px 10px, 10px 2px, 2px 10px, 10px 2px, 2px 10px;
+  background-repeat: no-repeat;
+}
+
+/* Subtle Editorial Image Transitions */
+.editorial-img-zoom {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+}
+
+.group:hover .editorial-img-zoom {
+  transform: scale(1.035);
+}
+
+/* Custom Selection in Denshi Blue */
+::selection {
+  background-color: #0B4ECF;
+  color: #FFFFFF;
+}
+
+/* Organic Blue Bubble Blob Keyframes */
+@keyframes morphBlob {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: rotate(0deg) scale(1);
+  }
+  34% {
+    border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%;
+    transform: rotate(120deg) scale(1.05);
+  }
+  67% {
+    border-radius: 40% 60% 70% 30% / 50% 40% 60% 50%;
+    transform: rotate(240deg) scale(0.96);
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-15px) translateX(10px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.65;
+    filter: blur(40px);
+  }
+  50% {
+    opacity: 0.85;
+    filter: blur(55px);
+  }
+}
+
+/* Universal Instant & Smooth Tactile Response for All Buttons and Interactive Moves */
+button,
+[role="button"],
+a[href],
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition-property: transform, color, background-color, border-color, box-shadow, opacity;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Instant micro-compression on click: immediate 0ms feedback with smooth release */
+button:active:not(:disabled),
+[role="button"]:active:not([aria-disabled="true"]),
+a[href]:active:not([target="_blank"]) {
+  transform: scale(0.972);
+  transition-duration: 0ms !important;
+}
+
+/* Disabled state cleanliness */
+button:disabled,
+[role="button"][aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none !important;
+}
+
+

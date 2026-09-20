@@ -1,0 +1,6 @@
+{
+  "name": "Denshi Innovation Club",
+  "description": "Official website of Denshi Innovation Club - student-led technology & engineering community by B.E. ECE students of Sir Isaac Newton College of Engineering and Technology, supported by the Skill Development Cell.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
